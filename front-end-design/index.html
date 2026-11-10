@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TôBem · Cuidado entre vizinhos em Copacabana</title>
+    <meta
+      name="description"
+      content="TôBem: check-in diário para idosos que moram sozinhos em Copacabana. Se o check-in não acontece, o condomínio é avisado."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- JS -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="cabecalho-conteudo">
+        <a href="#inicio" class="logo">
+          <i class="fa-solid fa-heart"></i> TôBem
+        </a>
+
+        <nav aria-label="Menu principal">
+          <ul class="menu">
+            <li><a href="#problema">O problema</a></li>
+            <li><a href="#como-funciona">Como funciona</a></li>
+            <li><a href="#app">O app</a></li>
+            <li><a href="#impacto">Impacto</a></li>
+            <li><a href="#equipe">Equipe</a></li>
+          </ul>
+        </nav>
+        <button type="button" id="botao-tema" class="botao-tema">
+          <i id="icone-tema" class="fa-solid fa-moon"></i>
+          <span id="texto-tema">Modo escuro</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- ========== Topo (hero) ========== -->
+      <section id="inicio" class="hero">
+        <div class="hero-conteudo">
+          <div class="hero-texto">
+            <h1>Um toque por dia para dizer: tô bem.</h1>
+            <p>
+              O TôBem ajuda idosos que moram sozinhos em Copacabana. De manhã e
+              à noite, um toque avisa que está tudo certo. Se o aviso não chega,
+              o porteiro vai conferir.
+            </p>
+            <a href="#como-funciona" class="botao">
+              <i class="fa-solid fa-circle-play"></i> Veja como funciona
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== O problema ========== -->
+      <section id="problema" class="secao secao-areia">
+        <div class="conteudo problema">
+          <div class="problema-numero">
+            <span class="numero-grande">24</span>
+            <span class="numero-legenda">horas esperando por ajuda</span>
+          </div>
+
+          <div class="problema-texto">
+            <h2>O problema</h2>
+            <p>
+              Uma vizinha do nosso prédio caiu dentro de casa. Estava consciente
+              e se mexia, mas não conseguia se levantar. Como morava sozinha,
+              ninguém percebeu. Ela só foi encontrada no dia seguinte, quando as
+              amigas estranharam que não atendia o telefone.
+            </p>
+
+            <ul class="problema-lista">
+              <li>
+                <i class="fa-solid fa-house-user"></i> Muitos idosos moram
+                sozinhos.
+              </li>
+              <li>
+                <i class="fa-solid fa-phone-slash"></i> Quando algo acontece,
+                ninguém percebe logo.
+              </li>
+              <li>
+                <i class="fa-solid fa-clock"></i> O socorro chega tarde demais.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== Como funciona ========== -->
+      <section id="como-funciona" class="secao">
+        <div class="conteudo">
+          <h2>Como funciona</h2>
+          <p class="secao-intro">
+            Quatro passos simples, duas vezes por dia. O idoso não precisa
+            digitar nada.
+          </p>
+
+          <ol class="passos">
+            <li class="passo">
+              <img
+                src="img/passo1-lembrete.svg"
+                alt="Aparelho do TôBem às 8:00 com a luz amarela acesa e tocando um bipe"
+              />
+              <div class="passo-texto">
+                <span class="passo-numero">1</span>
+                <h3>Lembrete</h3>
+                <p>
+                  Às 8h e às 20h, o aparelho na casa do idoso acende uma luz e
+                  toca um bipe curto.
+                </p>
+              </div>
+            </li>
+
+            <li class="passo">
+              <img
+                src="img/passo2-toque.svg"
+                alt="Celular com o botão redondo verde Tô bem"
+              />
+              <div class="passo-texto">
+                <span class="passo-numero">2</span>
+                <h3>Um toque</h3>
+                <p>
+                  O idoso aperta o botão verde "Tô bem!", no aparelho ou no
+                  celular. Pronto.
+                </p>
+              </div>
+            </li>
+
+            <li class="passo">
+              <img
+                src="img/passo3-aviso.svg"
+                alt="Tela da portaria avisando que o apartamento 302 está sem check-in"
+              />
+              <div class="passo-texto">
+                <span class="passo-numero">3</span>
+                <h3>Aviso</h3>
+                <p>
+                  Se o toque não vier em 1 hora, a portaria recebe o aviso de
+                  qual apartamento conferir.
+                </p>
+              </div>
+            </li>
+
+            <li class="passo">
+              <img
+                src="img/verificacao.jpg"
+                alt="Síndico na porta conversando com uma moradora idosa sorridente"
+              />
+              <div class="passo-texto">
+                <span class="passo-numero">4</span>
+                <h3>Verificação</h3>
+                <p>
+                  O porteiro ou o síndico bate na porta e registra: está tudo
+                  bem ou precisou de ajuda.
+                </p>
+              </div>
+            </li>
+          </ol>
+
+          <p class="passos-extra">
+            <i class="fa-solid fa-temperature-high"></i>
+            O aparelho também mede a temperatura e a umidade da casa e avisa
+            quando está quente demais.
+          </p>
+        </div>
+      </section>
+
+      <!-- ========== O app ========== -->
+      <section id="app" class="secao secao-areia">
+        <div class="conteudo">
+          <h2>O app</h2>
+          <p class="secao-intro">
+            Uma tela, um botão. Quem cuida acompanha tudo pelas cores do
+            semáforo.
+          </p>
+
+          <div class="app">
+            <!-- Tela do celular (exemplo) -->
+            <div class="app-celular">
+              <div class="celular">
+                <p id="saudacao" class="celular-saudacao">Bom dia!</p>
+                <p id="instrucao" class="celular-instrucao" aria-live="polite">
+                  Toque no botão para avisar que está tudo bem.
+                </p>
+
+                <button type="button" id="botao-tobem" class="botao-tobem">
+                  <i id="icone-tobem" class="fa-solid fa-heart"></i>
+                  <span id="texto-tobem">Tô bem!</span>
+                </button>
+
+                <p id="proximo-checkin" class="celular-proximo">
+                  Próximo check-in: 20h
+                </p>
+              </div>
+              <p class="celular-legenda">Exemplo da tela do app</p>
+            </div>
+
+            <!-- Os três estados -->
+            <ul class="estados">
+              <li class="estado estado-ok">
+                <span class="estado-selo"
+                  ><i class="fa-solid fa-circle-check"></i> OK</span
+                >
+                <p class="estado-visor">
+                  No visor do aparelho: <strong>Tudo bem</strong>
+                </p>
+                <p>
+                  Check-in em dia e casa com temperatura agradável. Ninguém
+                  precisa fazer nada.
+                </p>
+              </li>
+
+              <li class="estado estado-atencao">
+                <span class="estado-selo"
+                  ><i class="fa-solid fa-triangle-exclamation"></i>
+                  ATENÇÃO</span
+                >
+                <p class="estado-visor">
+                  No visor do aparelho: <strong>Faca check-in</strong>
+                </p>
+                <p>
+                  Chegou a hora do check-in, ou a casa está ficando quente. O
+                  aparelho lembra o idoso com uma luz e um bipe curto.
+                </p>
+              </li>
+
+              <li class="estado estado-perigo">
+                <span class="estado-selo"
+                  ><i class="fa-solid fa-bell"></i> PERIGO</span
+                >
+                <p class="estado-visor">
+                  No visor do aparelho: <strong>SEM CHECK-IN 13h</strong>
+                </p>
+                <p>
+                  Passou 1 hora do horário sem check-in. A portaria é avisada
+                  para conferir o apartamento.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <!-- Simulador do aparelho -->
+          <div class="simulador">
+            <h3>Simule o aparelho</h3>
+            <p class="secao-intro">
+              Arraste os controles e veja o que o aparelho mostraria. As regras
+              são as mesmas do dispositivo real.
+            </p>
+
+            <div class="simulador-corpo">
+              <!-- Controles -->
+              <div class="controles">
+                <div class="controle">
+                  <label for="temperatura">
+                    Temperatura <span id="valor-temperatura">25 °C</span>
+                  </label>
+                  <input
+                    type="range"
+                    id="temperatura"
+                    min="15"
+                    max="40"
+                    step="0.5"
+                    value="25"
+                  />
+                </div>
+
+                <div class="controle">
+                  <label for="umidade">
+                    Umidade <span id="valor-umidade">60 %</span>
+                  </label>
+                  <input
+                    type="range"
+                    id="umidade"
+                    min="10"
+                    max="100"
+                    step="1"
+                    value="60"
+                  />
+                </div>
+
+                <div class="controle">
+                  <label for="horas">
+                    Horas desde o último check-in
+                    <span id="valor-horas">2 h</span>
+                  </label>
+                  <input
+                    type="range"
+                    id="horas"
+                    min="0"
+                    max="24"
+                    step="1"
+                    value="2"
+                  />
+                </div>
+              </div>
+
+              <!-- Visor -->
+              <div id="visor" class="visor estado-ok">
+                <div class="visor-tela">
+                  <p id="visor-leitura">25.0C 60%</p>
+                  <p id="visor-mensagem">Tudo bem</p>
+                </div>
+
+                <div class="visor-leds">
+                  <span class="led led-verde"></span>
+                  <span class="led led-amarelo"></span>
+                  <span class="led led-vermelho"></span>
+                </div>
+
+                <span class="estado-selo">
+                  <i id="visor-icone" class="fa-solid fa-circle-check"></i>
+                  <span id="visor-estado">OK</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== Impacto e ODS ========== -->
+      <section id="impacto" class="secao">
+        <div class="conteudo">
+          <h2>Impacto</h2>
+
+          <div class="impacto-destaque">
+            <img
+              src="img/comunidade.jpg"
+              class="impacto-foto"
+              alt="Grupo de idosos sorrindo e jogando dominó em um terraço com vista para a praia de Copacabana"
+            />
+
+            <div class="indicador">
+              <p class="indicador-titulo">
+                Tempo até alguém conferir se o idoso está bem
+              </p>
+
+              <div class="indicador-comparacao">
+                <div class="indicador-valor">
+                  <span class="indicador-rotulo">Hoje</span>
+                  <span class="indicador-numero indicador-antes">24 h</span>
+                </div>
+                <i class="fa-solid fa-arrow-right indicador-seta"></i>
+                <div class="indicador-valor">
+                  <span class="indicador-rotulo">Com o TôBem</span>
+                  <span class="indicador-numero indicador-depois">até 1 h</span>
+                </div>
+              </div>
+
+              <p class="indicador-reducao">
+                Meta: 95,8% menos tempo de espera.
+              </p>
+
+              <ul class="indicadores-extra">
+                <li>
+                  <i class="fa-solid fa-calendar-check"></i> Percentual de
+                  check-ins feitos no horário, por semana.
+                </li>
+                <li>
+                  <i class="fa-solid fa-door-open"></i> Percentual de alertas
+                  atendidos dentro do prazo.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="ods-titulo">
+            Objetivos de Desenvolvimento Sustentável da ONU
+          </h3>
+
+          <ul class="ods">
+            <li class="ods-item">
+              <span class="ods-numero ods-3">3</span>
+              <h4>Saúde e bem-estar</h4>
+              <p>
+                Socorro mais rápido depois de quedas e mal-estar, e menos
+                isolamento.
+              </p>
+            </li>
+            <li class="ods-item">
+              <span class="ods-numero ods-10">10</span>
+              <h4>Redução das desigualdades</h4>
+              <p>
+                O idoso continua morando sozinho, com autonomia e segurança, sem
+                precisar se mudar.
+              </p>
+            </li>
+            <li class="ods-item">
+              <span class="ods-numero ods-11">11</span>
+              <h4>Cidades e comunidades sustentáveis</h4>
+              <p>
+                O prédio vira uma rede de cuidado com quem já está lá: portaria,
+                síndico e vizinhos.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========== Equipe ========== -->
+      <section id="equipe" class="secao secao-areia">
+        <div class="conteudo">
+          <h2>Equipe</h2>
+          <p class="secao-intro">
+            Somos estudantes de Engenharia de Software da FIAP, no Rio de
+            Janeiro. O TôBem nasceu de um caso real no prédio de um de nós.
+          </p>
+
+          <ul class="equipe">
+            <li class="pessoa">
+              <img
+                src="https://avatars.githubusercontent.com/u/321475053?v=4"
+                class="pessoa-foto"
+                alt="Foto de Gabriel Almeida"
+              />
+              <div>
+                <h3>Gabriel Almeida</h3>
+                <p class="pessoa-rm">RM 575525</p>
+              </div>
+            </li>
+            <li class="pessoa">
+              <img
+                src="https://avatars.githubusercontent.com/u/62453211?v=4"
+                class="pessoa-foto"
+                alt="Foto de Anne Bortoli"
+              />
+              <div>
+                <h3>Anne Bortoli</h3>
+                <p class="pessoa-rm">RM 574750</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== Rodapé ========== -->
+    <footer class="rodape">
+      <div class="rodape-conteudo">
+        <div class="rodape-marca">
+          <p class="rodape-logo"><i class="fa-solid fa-heart"></i> TôBem</p>
+          <p>
+            Cuidado entre vizinhos para idosos que moram sozinhos em Copacabana.
+          </p>
+        </div>
+
+        <div class="rodape-info">
+          <p><strong>FIAP · Global Solution 2026.2 · CitizenTech</strong></p>
+          <p>Engenharia de Software, 1º ano · Rio de Janeiro</p>
+          <p>Gabriel Almeida (RM 575525) e Anne Bortoli (RM 574750)</p>
+          <p>
+            <a
+              href="https://github.com/ANNEBORTOLI/gs-tobem-landingPage"
+              target="_blank"
+              rel="noopener"
+              ><i class="fa-brands fa-github"></i> Repositório do projeto</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <p class="rodape-creditos">
+        Imagens geradas com Gemini (Google). Ícones: Font Awesome Free. Fonte:
+        Atkinson Hyperlegible (Braille Institute). Dados simulados. © 2026
+        TôBem.
+      </p>
+    </footer>
+  </body>
+</html>

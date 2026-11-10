@@ -1,0 +1,786 @@
+/* ---------- Variáveis (cores, fonte, medidas) ---------- */
+:root {
+  /* Cores da marca */
+  --cor-azul-mar: #0b5c7a;
+  --cor-areia: #f4e4c1;
+  --cor-branco: #ffffff;
+  --cor-texto: #1f2933;
+
+  /* Cores dos estados (as mesmas dos LEDs do dispositivo) */
+  --cor-ok: #1e7f4f;
+  --cor-atencao: #f2b705;
+  --cor-perigo: #b3261e;
+
+  /* Fundo e texto da página (o modo escuro vai trocar só estes) */
+  --cor-fundo: var(--cor-branco);
+  --cor-fundo-alternado: var(--cor-areia);
+  --cor-titulo: var(--cor-azul-mar);
+  --cor-menu-destaque: rgba(255, 255, 255, 0.15);
+  --cor-texto-fixo: #1f2933;
+  --cor-perigo-texto: var(--cor-perigo);
+
+  /* Cores oficiais dos ODS (ONU) */
+  --cor-ods-3: #4c9f38;
+  --cor-ods-10: #dd1367;
+  --cor-ods-11: #fd9d24;
+
+  /* Fonte */
+  --fonte: "Atkinson Hyperlegible", Verdana, Arial, sans-serif;
+  --tamanho-texto: 20px;
+
+  /* Medidas */
+  --largura-maxima: 1200px;
+  --espaco: 24px;
+  --raio: 12px;
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* rolagem suave ao clicar no menu */
+}
+
+body {
+  font-family: var(--fonte);
+  font-size: var(--tamanho-texto);
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--cor-titulo);
+  line-height: 1.2;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- Cabeçalho e menu ---------- */
+.cabecalho {
+  position: sticky; /* fica preso no topo ao rolar */
+  top: 0;
+  z-index: 10; /* fica por cima das seções */
+  background-color: var(--cor-azul-mar);
+}
+
+.cabecalho-conteudo {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 16px var(--espaco);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* em tela estreita, o menu desce para a linha de baixo */
+  gap: 16px;
+}
+
+.logo {
+  color: var(--cor-branco);
+  font-size: 30px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.menu a {
+  display: block;
+  padding: 10px 16px; /* área de clique grande */
+  color: var(--cor-branco);
+  text-decoration: none;
+  border-radius: var(--raio);
+}
+
+.menu a:hover {
+  background-color: var(--cor-menu-destaque);
+}
+
+/* Contorno visível para quem navega pelo teclado (tecla Tab) */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--cor-atencao);
+  outline-offset: 3px;
+}
+
+/* ---------- Seções ---------- */
+.secao {
+  scroll-margin-top: 100px; /* o título não fica escondido atrás do menu */
+  padding: 80px var(--espaco);
+}
+
+/* ---------- Topo (hero) ---------- */
+.hero {
+  padding: 32px var(--espaco) 0;
+  scroll-margin-top: 100px;
+}
+
+.hero-conteudo {
+  max-width: var(--largura-maxima); /* a foto não estica além de 1200 px */
+  margin: 0 auto;
+  min-height: 560px;
+  padding: 48px;
+  border-radius: var(--raio);
+  display: flex;
+  align-items: center;
+
+  /* Faixa azul (a cor --cor-azul-mar com transparência) por cima da foto */
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(11, 92, 122, 0.92) 0%,
+      rgba(11, 92, 122, 0.75) 40%,
+      rgba(11, 92, 122, 0) 70%
+    ),
+    url("../img/hero.jpg");
+  background-size: cover;
+  background-position: right center;
+}
+
+.hero-texto {
+  max-width: 560px;
+  color: var(--cor-branco);
+}
+
+.hero h1 {
+  color: var(--cor-branco);
+  font-size: 52px;
+}
+
+.hero p {
+  font-size: 24px;
+  margin: 24px 0 32px;
+}
+
+/* ---------- Botão ---------- */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 32px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--cor-azul-mar);
+  background-color: var(--cor-areia);
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.botao:hover {
+  background-color: var(--cor-branco);
+}
+
+/* ---------- Partes comuns das seções ---------- */
+.secao-areia {
+  background-color: var(--cor-fundo-alternado);
+}
+
+.conteudo {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+}
+
+.secao h2 {
+  font-size: 40px;
+  margin-bottom: 24px;
+}
+
+/* ---------- O problema ---------- */
+.problema {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  align-items: center;
+}
+
+.problema-numero {
+  flex: 1 1 320px; /* cresce, encolhe e começa com 320 px */
+  color: var(--cor-titulo);
+}
+
+.numero-grande {
+  display: block;
+  font-size: 200px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.numero-legenda {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.problema-texto {
+  flex: 2 1 400px; /* cresce o dobro do número: fica com mais espaço */
+}
+
+.problema-texto p {
+  max-width: 30em; /* 600 px com a fonte de 20 px */
+  margin-bottom: 24px;
+}
+
+.problema-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.problema-lista li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 700;
+}
+
+.problema-lista i {
+  width: 32px;
+  text-align: center;
+  font-size: 24px;
+  color: var(--cor-perigo-texto);
+}
+
+/* ---------- Como funciona ---------- */
+.secao-intro {
+  max-width: 30em; /* 600 px com a fonte de 20 px */
+  margin-bottom: 40px;
+}
+
+.passos {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.passo {
+  flex: 1 1 240px; /* 4 cards lado a lado, ou menos se faltar espaço */
+  background-color: var(--cor-fundo);
+  border: 2px solid var(--cor-fundo-alternado);
+  border-radius: var(--raio);
+  overflow: hidden;
+}
+
+.passo img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* a foto preenche a área sem deformar */
+}
+
+.passo-texto {
+  padding: 24px;
+}
+
+.passo-numero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--cor-branco);
+  background-color: var(--cor-azul-mar);
+}
+
+.passo h3 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.passos-extra {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+  font-weight: 700;
+}
+
+.passos-extra i {
+  font-size: 32px;
+  color: var(--cor-titulo);
+}
+
+/* ---------- O app ---------- */
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px;
+  align-items: center;
+}
+
+/* Desenho do Celular */
+.app-celular {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.celular {
+  width: 300px;
+  min-height: 540px;
+  padding: 40px 24px;
+  border: 14px solid var(--cor-texto-fixo);
+  color: var(--cor-texto-fixo);
+  border-radius: 44px;
+  background-color: var(--cor-branco);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.celular-saudacao {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--cor-azul-mar);
+}
+
+.celular-instrucao {
+  font-size: 20px;
+}
+
+.botao-tobem {
+  width: 190px;
+  height: 190px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--cor-ok);
+  color: var(--cor-branco);
+  font-family: var(--fonte);
+  font-size: 30px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 0 14px rgba(30, 127, 79, 0.2); /* anel verde em volta */
+}
+
+.botao-tobem i {
+  font-size: 40px;
+}
+
+.botao-tobem:active {
+  transform: scale(0.96); /* "afunda" um pouco ao ser apertado */
+}
+
+.celular-proximo {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.celular-legenda {
+  margin-top: 16px;
+  font-size: 16px;
+}
+
+/* Estados */
+.estados {
+  flex: 1 1 420px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.estado {
+  padding: 24px;
+  border-left: 10px solid;
+  border-radius: var(--raio);
+  background-color: var(--cor-fundo);
+}
+
+.estado-selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.estado-visor {
+  margin: 12px 0 8px;
+}
+
+.estado-ok {
+  border-color: var(--cor-ok);
+}
+.estado-atencao {
+  border-color: var(--cor-atencao);
+}
+.estado-perigo {
+  border-color: var(--cor-perigo);
+}
+
+.estado-ok .estado-selo {
+  background-color: var(--cor-ok);
+  color: var(--cor-branco);
+}
+.estado-atencao .estado-selo {
+  background-color: var(--cor-atencao);
+  color: var(--cor-texto-fixo);
+}
+.estado-perigo .estado-selo {
+  background-color: var(--cor-perigo);
+  color: var(--cor-branco);
+}
+
+/* ---------- Impacto ---------- */
+.impacto-destaque {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.impacto-foto {
+  flex: 1 1 420px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--raio);
+}
+
+.indicador {
+  flex: 1 1 400px;
+}
+
+.indicador-titulo {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.indicador-comparacao {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+
+.indicador-valor {
+  display: flex;
+  flex-direction: column;
+}
+
+.indicador-rotulo {
+  font-size: 18px;
+}
+
+.indicador-numero {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.indicador-antes {
+  color: var(--cor-perigo-texto);
+}
+
+.indicador-depois {
+  color: var(--cor-ok);
+}
+
+.indicador-seta {
+  font-size: 36px;
+  color: var(--cor-titulo);
+}
+
+.indicador-reducao {
+  margin: 24px 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--cor-titulo);
+}
+
+.indicadores-extra {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.indicadores-extra li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.indicadores-extra i {
+  width: 32px;
+  text-align: center;
+  font-size: 24px;
+  color: var(--cor-titulo);
+}
+
+/* ---------- ODS ---------- */
+.ods-titulo {
+  font-size: 30px;
+  margin-bottom: 24px;
+}
+
+.ods {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.ods-item {
+  flex: 1 1 280px;
+  padding: 28px;
+  border: 2px solid var(--cor-fundo-alternado);
+  border-radius: var(--raio);
+}
+
+.ods-numero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  border-radius: var(--raio);
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.ods-3 {
+  background-color: var(--cor-ods-3);
+  color: var(--cor-branco);
+}
+.ods-10 {
+  background-color: var(--cor-ods-10);
+  color: var(--cor-branco);
+}
+.ods-11 {
+  background-color: var(--cor-ods-11);
+  color: var(--cor-texto-fixo);
+}
+
+.ods-item h4 {
+  font-size: 24px;
+  color: var(--cor-titulo);
+  margin-bottom: 8px;
+}
+
+/* ---------- Equipe ---------- */
+.equipe {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.pessoa {
+  flex: 1 1 360px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px;
+  border-radius: var(--raio);
+  background-color: var(--cor-fundo);
+}
+
+.pessoa-foto {
+  flex-shrink: 0;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--cor-azul-mar);
+}
+
+.pessoa h3 {
+  font-size: 26px;
+}
+
+.pessoa-rm {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  padding: 56px var(--espaco) 32px;
+  color: var(--cor-branco);
+  background-color: var(--cor-azul-mar);
+}
+
+.rodape-conteudo {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.rodape-marca {
+  flex: 1 1 320px;
+}
+
+.rodape-logo {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.rodape-info {
+  flex: 1 1 360px;
+}
+
+.rodape a {
+  color: var(--cor-areia);
+}
+
+.rodape-creditos {
+  max-width: var(--largura-maxima);
+  margin: 40px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--cor-menu-destaque);
+  font-size: 16px;
+}
+
+/* ---------- Modo escuro ---------- */
+/* O JS coloca a classe "tema-escuro" no <body>.
+   Aqui são os valores das variáveis de função. */
+body.tema-escuro {
+  --cor-fundo: #0f1a20;
+  --cor-fundo-alternado: #172830;
+  --cor-texto: #e8eef1;
+  --cor-titulo: #8ccde6;
+  --cor-perigo-texto: #ff8a80;
+}
+
+/* ---------- Botão de tema ---------- */
+.botao-tema {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border: 2px solid var(--cor-branco);
+  border-radius: 999px;
+  background-color: transparent;
+  color: var(--cor-branco);
+  font-family: var(--fonte);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.botao-tema:hover {
+  background-color: var(--cor-menu-destaque);
+}
+
+/* ---------- Simulador ---------- */
+.simulador {
+  margin-top: 80px;
+}
+
+.simulador h3 {
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+.simulador-corpo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Controles */
+.controles {
+  flex: 1 1 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.controle label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.controle input {
+  width: 100%;
+  accent-color: var(--cor-azul-mar); /* cor do controle deslizante */
+  cursor: pointer;
+}
+
+/* Visor */
+.visor {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 32px;
+  border-radius: 24px;
+  background-color: var(--cor-azul-mar);
+}
+
+.visor-tela {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 8px;
+  background-color: #e3f1ea;
+  color: var(--cor-texto-fixo);
+  font-family: "Courier New", monospace; /* letras de visor LCD */
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.visor-leds {
+  display: flex;
+  gap: 20px;
+}
+
+.led {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #3d7a92; /* LED apagado */
+}
+
+/* O LED aceso depende da classe do visor */
+.visor.estado-ok .led-verde {
+  background-color: var(--cor-ok);
+  box-shadow: 0 0 12px 4px var(--cor-ok);
+}
+
+.visor.estado-atencao .led-amarelo {
+  background-color: var(--cor-atencao);
+  box-shadow: 0 0 12px 4px var(--cor-atencao);
+}
+
+.visor.estado-perigo .led-vermelho {
+  background-color: var(--cor-perigo);
+  box-shadow: 0 0 12px 4px var(--cor-perigo);
+}
