@@ -66,27 +66,27 @@ As regras, os limites e as mensagens são **os mesmos** no aparelho, no programa
 
 ## 🧩 O que cada parte faz
 
-|     | Disciplina                                  | O que entregamos                                                                                                      | Pasta                                                                    |
-| :-: | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| 📟  | **Edge Computing**                          | Aparelho com Arduino Uno, sensor DHT22, botão, LEDs, buzzer e LCD, simulado no Wokwi. Funciona sozinho, sem internet. | [`edge-computing/`](edge-computing/)                                     |
-| 🐍  | **Computational Thinking with Python**      | O "cérebro": classifica as leituras de um dia com `if/elif/else` e calcula o resumo dos alertas.                      | [`computational-thinking-python/`](computational-thinking-python/)       |
-| 📐  | **Matemática**                              | Parábola do calor ao longo do dia e cálculo do indicador de impacto.                                                  | [`matematica/`](matematica/)                                             |
-| 🎨  | **Front-end Design**                        | Landing page que explica o problema, a jornada, o impacto e os ODS.                                                   | [`front-end-design/`](front-end-design/)                                 |
-| ⚙️  | **Web Development**                         | Modo claro/escuro, botão "Tô bem!" funcionando e simulador do aparelho com a regra de decisão em JavaScript.          | [`web-development/`](web-development/)                                   |
-| 🧭  | **Software & Total Experience Design**      | Escopo, requisitos, backlog e priorização pensados para idosos.                                                       | [`software-total-experience-design/`](software-total-experience-design/) |
-| 🎬  | **Storytelling & Inspiração Empreendedora** | Videopitch de até 3 minutos e slide deck.                                                                             | [`storytelling/`](storytelling/)                                         |
+|     | Disciplina                                      | O que entregamos                                                                                                      | Pasta                                                                    |
+| :-: | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| 📟  | **Edge Computing**                              | Aparelho com Arduino Uno, sensor DHT22, botão, LEDs, buzzer e LCD, simulado no Wokwi. Funciona sozinho, sem internet. | [`edge-computing/`](edge-computing/)                                     |
+| 🐍  | **Computational Thinking with Python**          | O "cérebro": classifica as leituras de um dia com `if/elif/else` e calcula o resumo dos alertas.                      | [`computational-thinking-python/`](computational-thinking-python/)       |
+| 📐  | **Differentiated Problem Solving (Matemática)** | Parábola do calor ao longo do dia e cálculo do indicador de impacto.                                                  | [`differentiated-problem-solving/`](differentiated-problem-solving/)     |
+| 🎨  | **Front-end Design**                            | Landing page que explica o problema, a jornada, o impacto e os ODS.                                                   | [`front-end-design/`](front-end-design/)                                 |
+| ⚙️  | **Web Development**                             | Modo claro/escuro, botão "Tô bem!" funcionando e simulador do aparelho com a regra de decisão em JavaScript.          | [`web-development/`](web-development/)                                   |
+| 🧭  | **Software & Total Experience Design**          | Escopo, requisitos, backlog e priorização pensados para idosos.                                                       | [`software-total-experience-design/`](software-total-experience-design/) |
+| 🎬  | **Storytelling & Inspiração Empreendedora**     | Videopitch de até 3 minutos e slide deck.                                                                             | [`storytelling/`](storytelling/)                                         |
 
 ---
 
 ## 🔗 Links
 
-|     | Onde                                                | Link                                                            |
-| :-: | --------------------------------------------------- | --------------------------------------------------------------- | --- |
-| 📟  | Simulação do aparelho no Wokwi                      | [Abrir no Wokwi](https://wokwi.com/projects/479775938984317953) |
-| 🎬  | Videopitch no YouTube                               | _(adicionar link)_                                              |
-| 🐍  | Repositório original do Python                      | _(adicionar link)_                                              |
-| 🌐  | Repositório original do Front-end e Web Development | _(adicionar link)_                                              |     |
-| 🎬  | Apresentação de Edge no YouTube                     | _(adicionar link)_                                              |
+|     | Onde                                                | Link                                                               |
+| :-: | --------------------------------------------------- | ------------------------------------------------------------------ |
+| 📟  | Simulação do aparelho no Wokwi                      | [Abrir no Wokwi](https://wokwi.com/projects/479775938984317953)    |
+| 🎬  | Videopitch no YouTube                               | [Assistir no YouTube](https://www.youtube.com/watch?v=9rOr9LILAIQ) |
+| 🐍  | Repositório original do Python                      | _(adicionar link)_                                                 |
+| 🌐  | Repositório original do Front-end e Web Development | _(adicionar link)_                                                 |
+| 🎬  | Apresentação de Edge no YouTube                     | [Assistir no YouTube](https://youtu.be/VURCeW4LhFE)                |
 
 ---
 
